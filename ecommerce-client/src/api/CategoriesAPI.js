@@ -6,7 +6,7 @@ function CategoriesAPI(){
     const [callback,setCallback]=useState(false)
     useEffect(()=>{
         const getCategories=async()=>{
-            const res=await axios.get('/api/category')
+            const res=await axios.get('https://abox.onrender.com/api/category')
             setCategories(res.data)
         }
         getCategories()

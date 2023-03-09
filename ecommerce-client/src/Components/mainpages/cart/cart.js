@@ -19,7 +19,7 @@ function cart(){
         getTotal()
     },[cart])
     const addToCart=async(cart)=>{
-        await axios.patch('/user/addcart',{cart},{
+        await axios.patch('https://abox.onrender.com/user/addcart',{cart},{
             headers:{Authorization:token}
         })
     }
@@ -42,7 +42,7 @@ function cart(){
         addToCart(cart)
     }
     const removeProduct=id=>{
-        if(window.confirm("Do you want to delete this product")){
+        if(window.confirm("Do you want to delete this product?")){
             cart.forEach((item,index)=>{
                 if(item._id===id){
                     cart.splice(index,1)

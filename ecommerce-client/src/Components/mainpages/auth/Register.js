@@ -14,7 +14,7 @@ function Register(){
     const registerSubmit=async e=>{
         e.preventDefault()
         try{
-           await axios.post('/user/register',{...user})
+           await axios.post('https://abox.onrender.com/user/register',{...user})
            window.location.href="/";
         }
         catch(err){

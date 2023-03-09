@@ -31,39 +31,16 @@ function Product(){
             if(product.checked) deleteProduct(product._id,product.images.public_id)
         })
     }
-    const getTopProducts=async (userId, page, limit) => {
-        try {
-          const purchases = await Purchase.aggregate([
-            { $match: { userId: userId } },
-            { $group: {
-                _id: { productId: '$productId', userId: '$userId' },
-                totalQuantity: { $sum: '$quantity' }
-              }
-            },
-            { $sort: { totalQuantity: -1 } },
-            { $skip: (page - 1) * limit },
-            { $limit: limit }
-          ]);
-      
-          const productIds = purchases.map(purchase => purchase._id.productId);
-          const topProducts = await Products.find({ _id: { $in: productIds } });
-      
-          return topProducts;
-        } catch (error) {
-          console.error(error);
-          throw new Error('Failed to get top products');
-        }
-      }
     
     const deleteProduct=async(id,public_id)=>{
         try{
               setLoading(true)
-              const destroyImg= axios.post('/api/destroy',{id},{
+              const destroyImg= axios.post('https://abox.onrender.com/api/destroy',{id},{
                 headers:{Authorization:token}
                 
               })
              
-              const deleteProduct=axios.delete(`/api/products/${id}`,{
+              const deleteProduct=axios.delete(`https://abox.onrender.com/api/products/${id}`,{
                 headers:{Authorization:token}
               })
                
@@ -80,7 +57,7 @@ function Product(){
         try{
           // var {visited}=req.body;
           // products.visited++;
-          axios.patch(`/api/products/${id}`,{
+          axios.patch(`https://abox.onrender.com/api/products/${id}`,{
             headers:{Authorization:token}
         })}
         catch(err){

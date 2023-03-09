@@ -10,7 +10,7 @@ function BtnRender({product,deleteProduct,updateProduct}){
     const addCart=state.userAPI.addCart
     var visited=product.visited
     const handleVisited=async(req,res)=>{ 
-            await axios.put(`/api/products/${product._id}`,{...product,visited},{
+            await axios.put(`https://abox.onrender.com/api/products/${product._id}`,{...product,visited},{
                 headers:{Authorization:token}
             })
            

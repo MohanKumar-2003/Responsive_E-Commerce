@@ -57,7 +57,7 @@ function createProduct(){
            let formData=new FormData()
            formData.append('file',file)
            setLoading(true)
-           const res=await axios.post('/api/upload',formData,{
+           const res=await axios.post('https://abox.onrender.com/api/upload',formData,{
             headers:{'content-type':'multipart/form-data',Authorization:token}
            }) 
            setLoading(false)
@@ -71,7 +71,7 @@ function createProduct(){
         try{
           if(!isAdmin) return alert("You are not an admin")
           setLoading(true)
-           await axios.post('/api/destroyPhoto',{public_id:images.public_id},{
+           await axios.post('https://abox.onrender.com/api/destroyPhoto',{public_id:images.public_id},{
             headers:{Authorization:token}
            }) 
            setLoading(false) 
@@ -95,12 +95,12 @@ function createProduct(){
             if(!isAdmin) return alert("You are not an Admin!")
             if(!images) return alert("No Image Upload")
             if(onEdit){
-                await axios.put(`/api/products/${product._id}`,{...product,images},{
+                await axios.put(`https://abox.onrender.com/api/products/${product._id}`,{...product,images},{
                     headers:{Authorization:token}
                 })
                 
             }else{
-                await axios.post("/api/products",{...product,images},{
+                await axios.post("https://abox.onrender.com/api/products",{...product,images},{
                     headers:{Authorization:token}
                 })
             }
