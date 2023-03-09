@@ -1,0 +1,35 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+     "start":"node server.js",
+     "server":"nodemon server.js",
+     "client":"cd ecommerce-client && npm run start",
+     "server-install":"npm install",
+     "client-install":"cd ecommerce-client && npm install",
+     "install-all":"concurrently \"npm run server-install \" \"npm run client-install \"",
+     "app":"concurrently \"npm run server \" \"npm run client\"",
+     "heroku-postbuild":"cd ecommerce-client && npm install && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cloudinary": "^1.33.0",
+    "concurrently": "^7.6.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.8.4",
+    "react-paypal-express-checkout": "^1.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

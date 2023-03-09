@@ -1,0 +1,49 @@
+.detail{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+    font-size: 150%;
+}
+.detail img{
+    max-width: 400px;
+    width: 100%;
+    margin:20px;
+    height:450px;
+    object-fit: contain;
+    display: block;
+}
+.box-detail{
+    max-width: 500px;
+    width:100%;
+    margin:5 20px;
+}
+.box-detail .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box-detail h2{
+    text-transform: uppercase;
+    color: darkblue ;
+    letter-spacing: 1px;
+    font-weight: 2rem ;
+}
+.box-detail p{
+    line-height:1.5;
+    margin:10px 0;
+    opacity: 0.8;
+}
+.box-detail .cart{
+    background: green;
+    color: white;
+    margin-top:20px;
+    padding:10px 25px;
+    display:inline-block;
+    text-transform:none;
+    letter-spacing: 1px;
+    opacity: 0.6;
+    border-radius: 10px;
+    box-shadow: 0 0 10px green;
+}

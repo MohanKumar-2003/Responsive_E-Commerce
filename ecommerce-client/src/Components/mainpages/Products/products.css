@@ -1,0 +1,75 @@
+.products{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    justify-items: center ;
+    margin: 20px 0 ;
+}
+
+@import url("../productItem/productitem.css");
+
+.delete-all{
+    text-align:right;
+    margin:20px;
+}
+.delete-all input{
+    height:20px;
+    width:20px;
+    transform: translateY(5px);
+    margin: 0 15px;
+}
+.delete-all span{
+    text-transform: uppercase;
+    color: rgb(70, 100,200);
+    letter-spacing: 0.5px;
+}
+.delete-all button{
+    border:1.3px solid black;
+    border-radius: 10px;
+    padding:3px 6px;
+    color: white;
+    background-color: red;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    box-shadow: 0 0 2px black;
+}
+/* .filter{
+    border-radius: 10px;
+} */
+.filter_menu{
+    width:100%;
+    min-height: 40px;
+    overflow: hidden;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+.filter_menu section,input{
+    border: 1px solid #ccc;
+    outline: none;
+    height:40px;
+    padding: 0 5px;
+}
+.filter_menu input{
+    flex:1;
+    margin: 0 10px;
+    border-radius: 30px;
+    box-shadow: 0 0 3px black;
+}
+
+.load_more{
+    text-align: center;
+}
+.load_more button{
+    padding: 10px 25px;
+    margin-bottom: 20px;
+    border: 1px solid #555; 
+    color:white;
+    background-color: aqua;
+    box-shadow: 0 0 4px black;
+    border-radius: 8px;
+    opacity: 0.7;
+}
