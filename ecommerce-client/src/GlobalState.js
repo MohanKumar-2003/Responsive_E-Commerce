@@ -10,7 +10,7 @@ export const DataProvider=({children})=>{
   
     useEffect(()=>{
         const firstLogin=localStorage.getItem('firstLogin')
-        if(firstLogin==true){
+        if(firstLogin){
            
         const refreshToken=async()=>{
             const res=await axios.get('/user/refresh-token')

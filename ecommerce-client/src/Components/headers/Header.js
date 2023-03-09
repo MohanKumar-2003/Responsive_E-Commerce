@@ -15,7 +15,7 @@ function Header(){
     const [menu,setMenu]=useState(false) 
     const logoutUser=async()=>{
       await axios.get('/user/logout')
-      localStorage.setItem('firstLogin',false)
+      localStorage.removeItem('firstLogin')
       window.location.href='/';
     }
    const adminRouter=()=>{
