@@ -21,7 +21,7 @@ const userCtrl = {
       const refreshtoken = createRefreshToken({ id: newUser._id })
       res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
-        path: 'https://abox.render.com/user/refresh-token',
+        path: 'https://abox.onrender.com/user/refresh-token',
         maxAge:7*24*60*60*1000
       })
       res.json({ accesstoken })
@@ -43,7 +43,7 @@ const userCtrl = {
       const refreshtoken = createRefreshToken({ id: user._id })
       res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
-        path: 'https://abox.render.com/user/refresh-token',
+        path: 'https://abox.onrender.com/user/refresh-token',
         maxAge:7*24*60*60*1000
       })
       res.json({ accesstoken })
@@ -56,7 +56,7 @@ const userCtrl = {
   },
   logout: async (req, res) => {
     try {
-      res.clearCookie('refreshtoken', { path: 'https://abox.render.com/user/refresh-token' })
+      res.clearCookie('refreshtoken', { path: 'https://abox.onrender.com/user/refresh-token' })
       return res.json({ msg: "Logged out" })
     }
     catch (err) {
