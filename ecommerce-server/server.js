@@ -31,6 +31,7 @@ const URLI=process.env.MONGODB_URL
 mongoose.connect(URLI,{
    useNewUrlParser: true,
    useUnifiedTopology: true
+   
 },err=>{
     if(err) throw err;
     console.log('Connected')
