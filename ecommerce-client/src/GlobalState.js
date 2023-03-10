@@ -10,8 +10,7 @@ export const DataProvider=({children})=>{
   
     useEffect(()=>{
         const firstLogin=localStorage.getItem('firstLogin')
-        if(firstLogin){
-           
+        if(firstLogin){  
         const refreshToken=async()=>{
             const res=await axios.get('https://abox.onrender.com/user/refresh-token')
             console.log(res)
