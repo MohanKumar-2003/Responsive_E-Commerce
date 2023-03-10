@@ -21,8 +21,8 @@ const userCtrl = {
       const refreshtoken = createRefreshToken({ id: newUser._id })
       res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
-        path: 'https://abox.onrender.com/user/refresh-token',
-        maxAge:7*24*60*60*1000
+        path: '/user/refresh-token',
+        maxAge:7*24*60*60*100000
       })
       res.json({ accesstoken })
       //  return(res.status(400).json({msg:"Register Success"}))
@@ -43,8 +43,8 @@ const userCtrl = {
       const refreshtoken = createRefreshToken({ id: user._id })
       res.cookie('refreshtoken', refreshtoken, {
         httpOnly: true,
-        path: 'https://abox.onrender.com/user/refresh-token',
-        maxAge:7*24*60*60*1000
+        path: '/user/refresh-token',
+        maxAge:7*24*60*60*100000
       })
       res.json({ accesstoken })
       //  res.json({msg:"Login Successful!"})
@@ -56,7 +56,7 @@ const userCtrl = {
   },
   logout: async (req, res) => {
     try {
-      res.clearCookie('refreshtoken', { path: 'https://abox.onrender.com/user/refresh-token' })
+      res.clearCookie('refreshtoken', { path: '/user/refresh-token' })
       return res.json({ msg: "Logged out" })
     }
     catch (err) {
@@ -103,10 +103,10 @@ const userCtrl = {
   }
 }
 const createAccessToken = (user) => {
-  return jwt.sign(user, process.env.SIGN_SECRET, { expiresIn: '11m' })
+  return jwt.sign(user, process.env.SIGN_SECRET, { expiresIn: '110m' })
 }
 const createRefreshToken = (user) => {
-  return jwt.sign(user, process.env.REFRESH_SECRET, { expiresIn: '7d' })
+  return jwt.sign(user, process.env.REFRESH_SECRET, { expiresIn: '70d' })
 }
 
 module.exports = userCtrl

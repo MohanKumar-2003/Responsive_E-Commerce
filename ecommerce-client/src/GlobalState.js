@@ -14,6 +14,7 @@ export const DataProvider=({children})=>{
            
         const refreshToken=async()=>{
             const res=await axios.get('https://abox.onrender.com/user/refresh-token')
+            console.log(res)
             setToken(res.data.accesstoken)
             setTimeout(()=>{
                 refreshToken()
