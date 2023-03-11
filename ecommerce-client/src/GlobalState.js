@@ -12,8 +12,7 @@ export const DataProvider=({children})=>{
         const firstLogin=localStorage.getItem('firstLogin')
         if(firstLogin){  
         const refreshToken=async()=>{
-            const res=await axios.get('https://abox.onrender.com/user/refresh-token')
-            setToken(res.data.accesstoken)
+            setToken(localStorage.getItem('token'))
             setTimeout(()=>{
                 refreshToken()
             },10*6*100000)

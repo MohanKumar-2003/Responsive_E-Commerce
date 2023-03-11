@@ -13,9 +13,9 @@ function Login(){
     const loginSubmit=async e=>{
         e.preventDefault()
         try{
-           await axios.post('https://abox.onrender.com/user/login',{...user})
+           await axios.post('https://abox.onrender.com/user/login',{...user}).then(res => localStorage.setItem('token', res.data.accesstoken))
            localStorage.setItem('firstLogin', true)
-           window.location.href="/";
+           window.location.href = '/'
         }
         catch(err){
             alert(err.response.data.msg)

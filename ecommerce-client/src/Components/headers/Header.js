@@ -16,6 +16,7 @@ function Header(){
     const logoutUser=async()=>{
       await axios.get('https://abox.onrender.com/user/logout')
       localStorage.removeItem('firstLogin')
+      localStorage.removeItem('token')
       window.location.href='/';
     }
    const adminRouter=()=>{
