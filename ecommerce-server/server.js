@@ -21,6 +21,9 @@ app.use(fileUp({
 app.get('/hello',async(req,res)=>{
     res.json({string:"Hello"})
 })
+app.use(cors({
+    origin:['http://abox.onrender.com','http://abox.vercel.app']
+}))
 
 app.use('/user',require('./routes/userRouter'))
 app.use('/api',require('./routes/categoryRouter'))

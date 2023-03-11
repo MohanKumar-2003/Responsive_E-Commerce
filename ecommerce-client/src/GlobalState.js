@@ -13,12 +13,11 @@ export const DataProvider=({children})=>{
         if(firstLogin){  
         const refreshToken=async()=>{
             const res=await axios.get('https://abox.onrender.com/user/refresh-token')
-            console.log(res)
             setToken(res.data.accesstoken)
             setTimeout(()=>{
                 refreshToken()
-            },10*60*1000)
-        } 
+            },10*6*100000)
+        }
         refreshToken()
     }
     },[])
